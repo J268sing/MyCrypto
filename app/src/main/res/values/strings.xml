@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">My Crypto</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Cryptocurrency</string>
+    <string name="title_notifications">Settings</string>
+    <string name="home_date_time">Date Time</string>
+    <string name="home_total_holdings_value">Total holdings value(fiat): </string>
+    <string name="home_24h">24h </string>
+
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>
