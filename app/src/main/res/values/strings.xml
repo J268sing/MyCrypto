@@ -1,11 +1,115 @@
 <resources>
     <string name="app_name">My Crypto</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Cryptocurrency</string>
-    <string name="title_notifications">Settings</string>
-    <string name="home_date_time">Date Time</string>
-    <string name="home_total_holdings_value">Total holdings value(fiat): </string>
-    <string name="home_24h">24h </string>
+    <string name="title_cryptocurrency">Cryptocurrency</string>
+    <string name="title_settings">Settings</string>
+
+    <!-- Strings related to home fragment -->
+    <string name="total_holdings_change_24h_label">"24 h "</string>
+    <string name="total_holdings_change_24h" translatable="false">" $ 62.62 "</string>
+    <string name="ranking_indicator_symbol" translatable="false">"↑↓"</string>
+    <string name="text_Crypto_coin_name_symbol">"Crypto Coin"</string>
+    <string name="text_price_symbol">"Price $\nAmount $"</string>
+    <string name="text_time_variance_indicator">" price % - 1 h / 7 d\n price % - 24 h\n amount $ - 24 h"</string>
+    <string name="divide_symbol" translatable="false">" / "</string>
+    <string name="default_date_time">"Total holdings value (10/01/2021 12:00:00)"</string>
+    <string name="total_holdings_change_24h_default" translatable="false">" $ +62.00 "</string>
+    <string name="text_item_icon_default" translatable="false">"BTC"</string>
+    <string name="list_text_item_name" translatable="false">"Crypto Coin"</string>
+    <string name="list_text_item_ranking" translatable="false">"1"</string>
+    <string name="list_item_amount" translatable="false">"62 BITCOIN"</string>
+    <string name="list_text_item_price_cad" translatable="false">"62.62 CAD"</string>
+    <string name="list_item_amount_cad" translatable="false">"62.6262 CAD"</string>
+    <string name="list_item_price_percent_change_1h_7d" translatable="false">"-62.62% / -62.62%"</string>
+    <string name="list_item_price_percent_change_24h" translatable="false">"+62.62%"</string>
+    <string name="list_item_amount_cad_change_24h" translatable="false">"+62.62 USD"</string>
+    <string name="empty_watchlist" translatable="false">"Empty Watchlist"</string>
+    <string name="add_items_watchlist" translatable="false">"Add to your watchlist from cryptocurrencies list"</string>
+
+    <!-- Strings related to Cryptocurrency Fragment -->
+    <string name="add_search_title">"Add crypto coins"</string>
+    <string name="add_search_subtitle">"All cryptocurrencies by ranking"</string>
+    <string name="action_search">"Search"</string>
+    <string name="search_hint">"Search for specific coin…"</string>
+    <string name="list_text_item_symbol_default" translatable="false">"BITCOIN"</string>
+    <string name="dialog_cryptocurrency_amount_title">"How many %1$s coins do you have?"</string>
+    <string name="dialog_cryptocurrency_amount_hint">"Enter amount"</string>
+    <string name="dialog_cryptocurrency_amount_confirm_button">"OK"</string>
+    <string name="dialog_cryptocurrency_amount_cancel_button">"Cancel"</string>
+    <string name="dialog_cryptocurrency_amount_error">"Valid number is required!"</string>
+
+
+    <!-- Strings related to Settings -->
+    <string name="pref_general_category_title">"General"</string>
+    <string name="pref_language_title">"Language"</string>
+    <string name="pref_default_language_entry">"English"</string>
+    <string name="pref_default_language_value">"EN"</string>
+    <string-array name="pref_language_list_entries" translatable="false">
+        <item>"English"</item>
+        <item>"עִברִית"</item>
+        <item>"Lietuvių"</item>
+    </string-array>
+
+    <string-array name="pref_language_list_values" translatable="false">
+        <item>"EN"</item>
+        <item>"HE"</item>
+        <item>"LT"</item>
+    </string-array>
+
+    <string name="pref_fiat_currency_title">"Fiat currency"</string>
+
+    <string name="pref_default_fiat_currency_value">" CAD"</string>
+
+
+    <string name="pref_date_format_title">"Date format"</string>
+
+    <string name="pref_default_date_format_entry" translatable="false">"12/31/2017"</string>
+    <string name="pref_default_date_format_value" translatable="false">"dd/mm/yyyy"</string>
+
+    <string-array name="pref_date_format_list_entries" translatable="false">
+        <item>"12/31/2017"</item>
+        <item>"2017/12/31"</item>
+    </string-array>
+
+    <string-array name="pref_date_format_list_values" translatable="false">
+        <item>"dd/mm/yyyy"</item>
+        <item>"yyyy/mm/dd"</item>
+    </string-array>
+
+    <string name="pref_24h_switch_title">"Use 24-hour format"</string>
+    <string name="pref_24h_switch_summary" translatable="false">"00:00"</string>
+
+
+    <string name="pref_support_category_title">"Support"</string>
+
+    <string name="pref_rate_app_title">"Rate app in Google Play"</string>
+
+    <string name="pref_share_app_title">"Share with your friends"</string>
+
+    <string name="pref_donate_view_title">"Donate your view"</string>
+    <string name="pref_donate_view_summary">"Just watch short video ad"</string>
+
+    <string name="pref_donate_crypto_title">"Donate with crypto"</string>
+    <string name="pref_donate_crypto_summary">"Send your Bitcoin or Etherium"</string>
+
+
+    <string name="pref_support_about_title">"About"</string>
+
+    <string name="pref_website_title">"Website"</string>
+    <string name="pref_website_summary">"mycryptocoins.baruckis.com"</string>
+
+    <string name="pref_author_title">"Author Andrius Baruckis"</string>
+    <string name="pref_author_summary" translatable="false">"www.baruckis.com"</string>
+
+    <string name="pref_source_title">"View source on"</string>
+    <string name="pref_source_summary" translatable="false">"GitHub"</string>
+
+    <string name="pref_open_source_title">"Used open source licenses"</string>
+
+    <string name="pref_license_title">"License"</string>
+    <string name="pref_license_summary">"Copyright"</string>
+
+    <string name="pref_app_title" translatable="false">@string/app_name</string>
 
 
     <!-- Preference Titles -->

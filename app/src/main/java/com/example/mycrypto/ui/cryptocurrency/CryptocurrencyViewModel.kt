@@ -1,18 +1,15 @@
-package com.example.mycrypto.ui.home
+package com.example.mycrypto.ui.cryptocurrency
 
 import android.app.Application
-import android.content.Context
 import androidx.lifecycle.*
 import com.example.mycrypto.data.CryptocurrencyItemHome
 import com.example.mycrypto.data.CryptocurrencyRepository
 import com.example.mycrypto.ui.utilities.roundValue
-import com.example.mycrypto.ui.utilities.ValueType
 import javax.inject.Inject
 
 
-class HomeViewModel(application: Application, cryptocurrencyRepository: CryptocurrencyRepository) : ViewModel() {
-
-    private var currentCryptoCurrencyCode: String
+class CryptocurrencyViewModel (application: Application,cryptocurrencyRepository: CryptocurrencyRepository) : ViewModel() {
+   /* private var currentCryptoCurrencyCode: String
     private var currentCryptoCurrencySign: String
 
     private val liveDataCurrentCryptocurrency: LiveData<CryptocurrencyItemHome>
@@ -24,16 +21,14 @@ class HomeViewModel(application: Application, cryptocurrencyRepository: Cryptocu
     val liveDataTotalHoldingsValueCryptoText: LiveData<String>
 
 
-    val cryptoSymbolColumn:LiveData<List<String>>
     init {
         currentCryptoCurrencyCode = "JSHN"
         currentCryptoCurrencySign = "$$"
-        liveDataMyCryptocurrencyList = cryptocurrencyRepository.getAllCryptocurrencyLiveDataList()
+        liveDataMyCryptocurrencyList = cryptocurrencyRepository.getMyCryptocurrencyLiveDataList()
         liveDataCurrentCryptocurrency = cryptocurrencyRepository.getSpecificCryptocurrencyLiveData(currentCryptoCurrencyCode)
         liveDataTotalHoldingsValueFiat24h = Transformations.switchMap(liveDataMyCryptocurrencyList) { _ -> MutableLiveData<Double>().apply { value = liveDataMyCryptocurrencyList.value?.sumByDouble { it.amountFiatChange24h } } }
         liveDataTotalHoldingsValueFiat = Transformations.switchMap(liveDataMyCryptocurrencyList) { _ -> MutableLiveData<Double>().apply { value = liveDataMyCryptocurrencyList.value?.sumByDouble { it.amountFiat } } }
         liveDataTotalHoldingsValueCrypto = countTotalHoldingsValueCrypto(liveDataTotalHoldingsValueFiat, liveDataCurrentCryptocurrency)
-        cryptoSymbolColumn = cryptocurrencyRepository.getSymbolCryptocurrencyColumn()
         liveDataTotalHoldingsValueCryptoText = Transformations.switchMap(liveDataTotalHoldingsValueCrypto) { MutableLiveData<String>().apply { value = String.format("$currentCryptoCurrencySign ${roundValue(liveDataTotalHoldingsValueCrypto.value!!, ValueType.Crypto)}") } }
     }
 
@@ -61,5 +56,38 @@ class HomeViewModel(application: Application, cryptocurrencyRepository: Cryptocu
             result.value = combineLatestData()
         }
         return result
+    }*/
+
+    val liveData1 = MutableLiveData<ArrayList<CryptocurrencyItemHome>>()
+    // Helper variable to store temporary cryptocurrency which user clicked on to add. It is stored
+    // in view model to avoid loosing value during configuration change, e.g. device rotation.
+    var selectedCryptocurrency: CryptocurrencyItemHome? = null
+
+    val data: LiveData<ArrayList<CryptocurrencyItemHome>>
+        get() = liveData1
+
+    init {
+        val tempData = ArrayList<CryptocurrencyItemHome>()
+
+
+        val btc: CryptocurrencyItemHome = CryptocurrencyItemHome("Bitcoin", 1, 0.56822348, "BTC",6972.90,3962.16, 0.225, -134.05, -0.455, -421.79)
+        val eth: CryptocurrencyItemHome = CryptocurrencyItemHome("Etherium", 2, 6.0, "ETH", 407.45, 24414.70, 0.131, -130.96, 0.143, 34.17)
+        val xrp: CryptocurrencyItemHome = CryptocurrencyItemHome("XRP", 3, 0.0, "XRP", 0.423225, 0.10, -0.012, -35.30, -1.438, 0.0)
+
+
+        val dgc: CryptocurrencyItemHome = CryptocurrencyItemHome("DogeCoin", 4, 0.56822348, "DGC",6972.90,3962.16, 0.225, -134.05, -0.455, -421.79)
+        val bch: CryptocurrencyItemHome = CryptocurrencyItemHome("Bitcoin Cash", 5, 6.0, "BCH", 407.45, 24414.70, 0.131, -130.96, 0.143, 34.17)
+
+
+      //  tempData.add(btc)
+        //tempData.add(eth)
+       // tempData.add(dgc)
+        tempData.add(bch)
+
+
+
+        liveData1.value = tempData
     }
+
+
 }

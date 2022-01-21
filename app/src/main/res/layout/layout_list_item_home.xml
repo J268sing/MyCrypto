@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="cryptocurrencyBinding"
+            type="com.example.mycrypto.data.CryptocurrencyItemHome" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/cardview_outer_margin"
+        android:layout_marginEnd="@dimen/cardview_outer_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/colorRed">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/cardview_inner_margin"
+            android:layout_marginTop="@dimen/separating_line_home"
+            android:layout_marginEnd="@dimen/cardview_inner_margin"
+            android:paddingBottom="@dimen/separating_line_home">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="@dimen/guide_right_percent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="@dimen/guide_left_percent" />
+
+            <eu.davidea.flipview.FlipView
+                android:id="@+id/item_image_crypto"
+                style="@style/FlipView"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toTopOf="@+id/item_ranking_crypto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_ranking_crypto"
+                style="@style/MainListItemText"
+                android:layout_marginStart="@dimen/list_item_text_margin"
+                android:layout_marginEnd="@dimen/list_item_text_margin"
+                android:text="@string/list_text_item_ranking"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/item_image_crypto"
+                app:layout_constraintStart_toStartOf="@+id/item_image_crypto"
+                app:layout_constraintTop_toBottomOf="@+id/item_image_crypto"
+                tools:text="@string/list_text_item_ranking" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_name_crypto"
+                style="@style/MainListItemPrimeText"
+                android:layout_marginStart="@dimen/cardview_outer_margin"
+                android:layout_marginEnd="@dimen/list_item_text_margin"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/item_amount_symbol"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+                app:layout_constraintStart_toEndOf="@+id/item_image_crypto"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="spread"
+                tools:text="@string/list_text_item_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_amount_symbol"
+                style="@style/MainListItemText"
+                android:layout_marginStart="@dimen/cardview_outer_margin"
+                android:layout_marginEnd="@dimen/list_item_text_margin"
+                android:text="@string/list_item_amount"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textDirection="locale"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+                app:layout_constraintStart_toEndOf="@+id/item_image_crypto"
+                app:layout_constraintTop_toBottomOf="@+id/item_name_crypto"
+                tools:text="@string/list_item_amount" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_price"
+                style="@style/MainListItemText"
+                android:layout_marginStart="@dimen/list_item_text_margin"
+                android:layout_marginEnd="@dimen/list_item_text_margin"
+                android:text="@string/list_text_item_price_cad"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/item_amount_cad"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_middle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="spread"
+                tools:text="@string/list_text_item_price_cad" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_amount_cad"
+                style="@style/MainListItemText"
+                android:layout_marginStart="@dimen/list_item_text_margin"
+                android:layout_marginEnd="@dimen/list_item_text_margin"
+                android:text="@string/list_item_amount_cad"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_middle"
+                app:layout_constraintTop_toBottomOf="@+id/item_price"
+                tools:text="@string/list_item_amount_cad" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_price_percent_change_1h_7d"
+                style="@style/MainListItemText"
+                android:layout_marginStart="@dimen/list_item_text_margin"
+                android:text="@string/list_item_price_percent_change_1h_7d"
+                android:textAlignment="viewEnd"
+                app:layout_constraintBottom_toTopOf="@+id/item_price_percent_change_24h"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline_right"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/list_item_price_percent_change_1h_7d"
+                tools:textColor="@color/decrementColor" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_price_percent_change_24h"
+                style="@style/MainListItemText"
+                android:layout_marginStart="@dimen/list_item_text_margin"
+                android:text="@string/list_item_price_percent_change_24h"
+                android:textAlignment="viewEnd"
+                app:layout_constraintBottom_toTopOf="@+id/item_amount_cad_change_24h"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline_right"
+                app:layout_constraintTop_toBottomOf="@+id/item_price_percent_change_1h_7d"
+                tools:text="@string/list_item_price_percent_change_24h"
+                tools:textColor="@color/incrementColor" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_amount_cad_change_24h"
+                style="@style/MainListItemText"
+                android:layout_marginStart="@dimen/list_item_text_margin"
+                android:text="@string/list_item_amount_cad_change_24h"
+                android:textAlignment="viewEnd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline_right"
+                app:layout_constraintTop_toBottomOf="@+id/item_price_percent_change_24h"
+                tools:text="@string/list_item_amount_cad_change_24h"
+                tools:textColor="@color/incrementColor" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View style="@style/Divider_Home"></View>
+
+    </androidx.cardview.widget.CardView>
+</layout>

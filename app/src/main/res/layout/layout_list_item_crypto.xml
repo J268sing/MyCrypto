@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginEnd="@dimen/cardview_outer_margin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/cardview_inner_margin">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_ranking_crypto"
+            style="@style/AddSearchListItemText"
+            android:layout_width="40dp"
+            android:layout_marginEnd="@dimen/add_search_list_item_text_between_margin"
+            android:text="@string/list_text_item_ranking"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/item_image_crypto"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/list_text_item_ranking" />
+
+        <eu.davidea.flipview.FlipView
+            android:id="@+id/item_image_crypto"
+            style="@style/FlipView"
+            android:layout_marginStart="@dimen/add_search_list_item_text_between_margin"
+            android:layout_marginEnd="@dimen/add_search_list_item_text_between_margin"
+            android:clickable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/item_name_crypto"
+            app:layout_constraintStart_toEndOf="@+id/item_ranking_crypto"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_name_crypto"
+            style="@style/AddSearchListItemPrimeText"
+            android:layout_marginStart="@dimen/add_search_list_item_text_between_margin"
+            android:layout_marginEnd="@dimen/add_search_list_item_text_between_margin_2x"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/item_symbol_crypto"
+            app:layout_constraintStart_toEndOf="@+id/item_image_crypto"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/list_text_item_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_symbol_crypto"
+            style="@style/AddSearchListItemText"
+            android:layout_marginEnd="@dimen/add_search_list_item_text_between_margin"
+            android:text="@string/list_text_item_symbol_default"
+            android:textAlignment="viewEnd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/list_text_item_symbol_default" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        style="@style/Divider_Home"
+        android:layout_margin="@dimen/separating_line_crypto" />
+
+</LinearLayout>
